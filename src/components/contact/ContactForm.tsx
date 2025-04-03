@@ -1,11 +1,10 @@
 
 import React, { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Send, Loader2 } from "lucide-react";
 import emailjs from '@emailjs/browser';
+import { FormField } from "./FormField";
 
 interface ContactFormProps {
   contactEmail: string;
@@ -79,64 +78,44 @@ export const ContactForm: React.FC<ContactFormProps> = ({ contactEmail }) => {
       <h3 className="text-xl font-semibold mb-6">Send Me a Message</h3>
       <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
         <div className="grid grid-cols-2 gap-4">
-          <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              Your Name
-            </label>
-            <Input
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="John Doe"
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              Your Email
-            </label>
-            <Input
-              id="email"
-              name="email"
-              type="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="john@example.com"
-              required
-            />
-          </div>
-        </div>
-        
-        <div>
-          <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            Subject
-          </label>
-          <Input
-            id="subject"
-            name="subject"
-            value={formData.subject}
+          <FormField
+            id="name"
+            name="name"
+            label="Your Name"
+            value={formData.name}
             onChange={handleChange}
-            placeholder="Project Inquiry"
-            required
+            placeholder="John Doe"
+          />
+          <FormField
+            id="email"
+            name="email"
+            label="Your Email"
+            type="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="john@example.com"
           />
         </div>
         
-        <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            Message
-          </label>
-          <Textarea
-            id="message"
-            name="message"
-            rows={5}
-            value={formData.message}
-            onChange={handleChange}
-            placeholder="Your message here..."
-            required
-            className="resize-none"
-          />
-        </div>
+        <FormField
+          id="subject"
+          name="subject"
+          label="Subject"
+          value={formData.subject}
+          onChange={handleChange}
+          placeholder="Project Inquiry"
+        />
+        
+        <FormField
+          id="message"
+          name="message"
+          label="Message"
+          type="textarea"
+          value={formData.message}
+          onChange={handleChange}
+          placeholder="Your message here..."
+          rows={5}
+        />
         
         <Button 
           type="submit" 
