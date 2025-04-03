@@ -4,6 +4,18 @@ import { Button } from "@/components/ui/button";
 import { FileDown, ExternalLink, Mail } from "lucide-react";
 
 const Hero = () => {
+  // Function to handle download of resume
+  const handleDownloadResume = () => {
+    // Create a link to download a sample resume PDF
+    // In a real scenario, you would replace this with your actual resume file path
+    const link = document.createElement('a');
+    link.href = '/resume.pdf'; // This assumes you've added a resume.pdf file in the public folder
+    link.download = 'data_ai_engineer_resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section
       id="home"
@@ -26,13 +38,34 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-wrap gap-4">
-            <Button className="bg-primary hover:bg-primary/90 px-6 py-6">
+            <Button 
+              className="bg-primary hover:bg-primary/90 px-6 py-6"
+              onClick={() => {
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
               <Mail className="mr-2 h-5 w-5" /> Hire Me
             </Button>
-            <Button variant="outline" className="px-6 py-6">
+            <Button 
+              variant="outline" 
+              className="px-6 py-6"
+              onClick={() => {
+                const projectsSection = document.getElementById('projects');
+                if (projectsSection) {
+                  projectsSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
               <ExternalLink className="mr-2 h-5 w-5" /> View Projects
             </Button>
-            <Button variant="secondary" className="px-6 py-6">
+            <Button 
+              variant="secondary" 
+              className="px-6 py-6"
+              onClick={handleDownloadResume}
+            >
               <FileDown className="mr-2 h-5 w-5" /> Download Resume
             </Button>
           </div>
@@ -59,7 +92,7 @@ const Hero = () => {
             <div className="relative bg-gradient-to-tr from-blue-600 to-purple-600 rounded-full p-1">
               <div className="bg-white dark:bg-gray-900 rounded-full p-2">
                 <img
-                  src="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1288&q=80"
+                  src="/profile.jpg" 
                   alt="Professional Data & AI Engineer"
                   className="rounded-full w-64 h-64 object-cover"
                 />
