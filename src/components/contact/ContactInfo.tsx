@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Mail, User } from "lucide-react";
+import { Mail, User, MapPin } from "lucide-react";
 import { SocialLinks } from "./SocialLinks";
 
 interface ContactInfoProps {
@@ -37,7 +37,10 @@ export const ContactInfo: React.FC<ContactInfoProps> = ({ contactEmail }) => {
         
         <div>
           <p className="font-medium text-gray-800 dark:text-gray-200">Location</p>
-          <p className="text-gray-600 dark:text-gray-300">New York, USA</p>
+          <div className="flex items-center gap-2">
+            <MapPin className="text-primary h-4 w-4" />
+            <p className="text-gray-600 dark:text-gray-300">New York, USA</p>
+          </div>
         </div>
       </div>
       

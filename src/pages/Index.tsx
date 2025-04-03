@@ -7,8 +7,11 @@ import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import { Chatbot } from "../components/chatbot/Chatbot";
 
 const Index = () => {
+  const contactEmail = "bangashfahad98@gmail.com";
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -20,6 +23,7 @@ const Index = () => {
         <Contact />
       </main>
       <Footer />
+      <Chatbot contactEmail={contactEmail} />
     </div>
   );
 };
