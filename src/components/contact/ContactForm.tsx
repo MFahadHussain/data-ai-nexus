@@ -31,17 +31,10 @@ export const ContactForm: React.FC<ContactFormProps> = ({ contactEmail }) => {
     setIsSubmitting(true);
     
     try {
-      // To make this work, you need to:
-      // 1. Create an account at https://www.emailjs.com/
-      // 2. Set up a service (e.g., Gmail)
-      // 3. Create an email template
-      // 4. Replace the service_id, template_id, and public_key with your own
-      
-      // IMPORTANT: You need to create a .env file with these values
-      // and add them to your environment variables in your deployment
-      const serviceId = 'YOUR_SERVICE_ID'; // Replace with your service ID
-      const templateId = 'YOUR_TEMPLATE_ID'; // Replace with your template ID
-      const publicKey = 'YOUR_PUBLIC_KEY'; // Replace with your public key
+      // Using the provided service ID
+      const serviceId = 'service_njekgw5'; 
+      const templateId = 'template_id'; // Replace with your actual template ID
+      const publicKey = 'public_key'; // Replace with your actual public key
       
       await emailjs.sendForm(
         serviceId,
