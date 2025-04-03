@@ -31,11 +31,15 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
+    // In a real implementation, you would send this data to an API
+    // Here we're just simulating the form submission
+    const contactEmail = "bangashfahad98@gmail.com";
+    
     // Simulate form submission
     setTimeout(() => {
       toast({
         title: "Message sent!",
-        description: "Thanks for reaching out. I'll get back to you soon.",
+        description: `Your message has been sent to ${contactEmail}. We'll get back to you soon.`,
       });
       setFormData({
         name: "",
@@ -96,10 +100,10 @@ const Contact = () => {
                 <div className="pt-4">
                   <p className="font-medium text-gray-800 dark:text-gray-200">Email</p>
                   <a 
-                    href="mailto:contact@example.com" 
+                    href="mailto:bangashfahad98@gmail.com" 
                     className="text-primary hover:underline"
                   >
-                    contact@example.com
+                    bangashfahad98@gmail.com
                   </a>
                 </div>
                 
