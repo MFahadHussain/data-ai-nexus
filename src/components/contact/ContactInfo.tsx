@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Mail } from "lucide-react";
+import { Mail, User } from "lucide-react";
 import { SocialLinks } from "./SocialLinks";
 
 interface ContactInfoProps {
@@ -15,6 +15,11 @@ export const ContactInfo: React.FC<ContactInfoProps> = ({ contactEmail }) => {
       </h3>
       
       <div className="space-y-4">
+        <div className="flex items-center gap-2">
+          <User className="text-primary" />
+          <h4 className="font-medium text-gray-800 dark:text-gray-200">Fahad Hussain</h4>
+        </div>
+
         <p className="text-gray-600 dark:text-gray-300">
           I'm currently available for freelance work and full-time positions. 
           If you have a project that needs data expertise, let's talk about how I can help you.
