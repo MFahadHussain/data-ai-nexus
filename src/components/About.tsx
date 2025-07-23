@@ -7,20 +7,20 @@ const About = () => {
   const education = [
     {
       degree: "Bachelor in Data Science",
-      institution: "Tech University",
-      year: "2019 - 2023",
+      institution: "Institute of Management Sciences Peshawar",
+      year: "2022 - 2026",
       description: "Focused on machine learning algorithms and data engineering."
     },
     {
       degree: "AI & Data Science Bootcamp",
       institution: "DataCamp",
-      year: "2022",
+      year: "2024",
       description: "Intensive training on AI applications and advanced data science techniques."
     },
     {
       degree: "Google Data Analytics Certificate",
       institution: "Google",
-      year: "2021",
+      year: "2023",
       description: "Professional certification in data analytics and visualization."
     }
   ];
@@ -29,13 +29,13 @@ const About = () => {
     {
       role: "MLSA Technical Lead",
       company: "Microsoft Learn Student Ambassadors",
-      period: "2022 - Present",
+      period: "2024 - Present",
       description: "Leading workshops on AI and cloud technologies. Mentoring students on data science projects."
     },
     {
       role: "Microsoft Lead Ambassador",
       company: "Microsoft",
-      period: "2021 - 2022",
+      period: "2023 - 2024",
       description: "Organized tech events and hackathons focused on cloud computing and AI solutions."
     },
     {
