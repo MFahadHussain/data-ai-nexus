@@ -25,26 +25,7 @@ const About = () => {
     }
   ];
 
-  const experience = [
-    {
-      role: "MLSA Technical Lead",
-      company: "Microsoft Learn Student Ambassadors",
-      period: "2024 - Present",
-      description: "Leading workshops on AI and cloud technologies. Mentoring students on data science projects."
-    },
-    {
-      role: "Microsoft Lead Ambassador",
-      company: "Microsoft",
-      period: "2023 - 2024",
-      description: "Organized tech events and hackathons focused on cloud computing and AI solutions."
-    },
-    {
-      role: "Freelance Data Analyst",
-      company: "Various Clients",
-      period: "2020 - Present",
-      description: "Delivering data-driven insights through analysis and visualization for business clients."
-    }
-  ];
+  
 
   const skills = [
     "Python", "SQL", "ETL Pipelines", "Power BI", 
