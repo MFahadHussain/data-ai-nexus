@@ -60,34 +60,35 @@ const ProjectCard = ({ title, description, image, technologies, githubUrl, demoU
 const Projects = () => {
   const projects = [
     {
-      title: "Hand Gesture Recognition",
-      description: "Real-time hand gesture recognition system using computer vision techniques to detect and classify different hand poses and movements.",
-      image: "https://images.unsplash.com/photo-1527430253228-e93688616381?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-      technologies: ["Computer Vision", "OpenCV", "TensorFlow", "Python", "Deep Learning"],
+      title: "Automated Sales Analytics System",
+      description: "Automates daily sales report generation and sends summaries via email using Gmail API integration.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      technologies: ["Python", "Google Apps Script", "Gmail API", "Automation"],
       githubUrl: "https://github.com",
       demoUrl: "https://demo.com"
+    },
+    {
+      title: "Hand Gesture Recognition with Computer Vision",
+      description: "Real-time gesture detection using webcam with deep learning integration for interactive applications.",
+      image: "https://images.unsplash.com/photo-1527430253228-e93688616381?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      technologies: ["Python", "OpenCV", "TensorFlow", "Computer Vision"],
+      githubUrl: "https://github.com",
+      demoUrl: "https://demo.com"
+    },
+    {
+      title: "Business Models Data Cleaning",
+      description: "Extracted and cleaned business datasets for downstream analysis, ensuring data quality and consistency.",
+      image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80",
+      technologies: ["Python", "Excel", "SQL", "Data Cleaning"],
+      githubUrl: "https://github.com"
     },
     {
       title: "Automated Power BI Dashboard",
-      description: "End-to-end business intelligence solution with automated data processing and interactive visualizations for sales and marketing analytics.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-      technologies: ["Power BI", "DAX", "Excel", "SQL", "Data Modeling"],
-      githubUrl: "https://github.com"
-    },
-    {
-      title: "Finance Dashboard",
-      description: "Comprehensive financial analytics platform with real-time data integration, predictive analytics, and customizable reporting capabilities.",
+      description: "Live-updating dashboard built for stakeholders using real-time data integration and automated refresh cycles.",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80",
-      technologies: ["Power BI", "Python", "Excel", "Financial Modeling"],
+      technologies: ["Power BI", "Excel", "DAX", "Data Modeling"],
       githubUrl: "https://github.com",
       demoUrl: "https://demo.com"
-    },
-    {
-      title: "Business Data Cleaning & Extraction",
-      description: "Automated system for cleaning, transforming, and extracting valuable insights from raw business data sources using advanced SQL queries and Python scripts.",
-      image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80",
-      technologies: ["SQL", "Python", "Excel", "ETL", "Data Cleaning"],
-      githubUrl: "https://github.com"
     }
   ];
 

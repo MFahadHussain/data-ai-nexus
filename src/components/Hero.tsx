@@ -24,17 +24,13 @@ const Hero = () => {
       <div className="container mx-auto grid md:grid-cols-2 gap-8 items-center">
         <div className="flex flex-col space-y-6 animate-fade-in">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-            <span className="heading-gradient">Data & AI Engineer</span>
+            <span className="text-gray-800 dark:text-gray-200">Fahad Hussain</span>
             <br />
-            <span className="text-gray-800 dark:text-gray-200">
-              Turning Data into Intelligence
-            </span>
+            <span className="heading-gradient">Data & AI Engineer Consultant</span>
           </h1>
           
           <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-xl">
-            Specialized in building robust data pipelines, developing AI solutions, 
-            and extracting actionable insights from complex datasets to drive 
-            business value and innovation.
+            Helping teams turn complex data into smart decisions with AI and automation.
           </p>
           
           <div className="flex flex-wrap gap-4">
@@ -70,18 +66,18 @@ const Hero = () => {
             </Button>
           </div>
           
-          <div className="flex gap-4 pt-4">
+          <div className="flex flex-wrap gap-4 pt-4">
             <div className="flex items-center">
-              <div className="h-1 w-1 rounded-full bg-green-500 mr-2"></div>
-              <span className="text-gray-600 dark:text-gray-400">Machine Learning</span>
+              <div className="h-2 w-2 rounded-full bg-primary mr-2"></div>
+              <span className="text-gray-600 dark:text-gray-400">📧 bangashfahad98@gmail.com</span>
             </div>
             <div className="flex items-center">
-              <div className="h-1 w-1 rounded-full bg-blue-500 mr-2"></div>
-              <span className="text-gray-600 dark:text-gray-400">Data Engineering</span>
+              <div className="h-2 w-2 rounded-full bg-primary mr-2"></div>
+              <span className="text-gray-600 dark:text-gray-400">📍 Peshawar, PK</span>
             </div>
             <div className="flex items-center">
-              <div className="h-1 w-1 rounded-full bg-purple-500 mr-2"></div>
-              <span className="text-gray-600 dark:text-gray-400">Cloud Computing</span>
+              <div className="h-2 w-2 rounded-full bg-primary mr-2"></div>
+              <a href="https://linkedin.com/in/fahadbangash/" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary">💼 LinkedIn</a>
             </div>
           </div>
         </div>

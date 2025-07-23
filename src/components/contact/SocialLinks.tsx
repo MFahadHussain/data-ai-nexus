@@ -11,14 +11,14 @@ interface SocialLink {
 export const SocialLinks: React.FC = () => {
   const socialLinks: SocialLink[] = [
     {
+      name: "LinkedIn",
+      url: "https://linkedin.com/in/fahadbangash/",
+      icon: Linkedin
+    },
+    {
       name: "GitHub",
       url: "https://github.com",
       icon: Github
-    },
-    {
-      name: "LinkedIn",
-      url: "https://linkedin.com",
-      icon: Linkedin
     },
     {
       name: "Fiverr",

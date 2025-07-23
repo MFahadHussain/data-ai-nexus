@@ -46,34 +46,34 @@ const ServiceCard = ({ title, description, Icon, skills }: ServiceCardProps) => 
 const Skills = () => {
   const services = [
     {
-      title: "Data Engineering Solutions",
-      description: "Design and implementation of robust data pipelines and ETL processes for efficient data processing.",
+      title: "Programming & Languages",
+      description: "Proficiency in multiple programming languages for data science and AI applications.",
       Icon: Database,
-      skills: ["ETL Pipelines", "Data Warehousing", "Big Data Processing", "Database Design", "Data Modeling"]
+      skills: ["Python", "SQL", "JavaScript", "R"]
     },
     {
-      title: "AI & ML Models",
-      description: "Development and deployment of machine learning and deep learning models for various applications.",
+      title: "Data Engineering & Analytics",
+      description: "Building robust data pipelines and performing advanced analytics on large datasets.",
       Icon: Brain,
-      skills: ["Deep Learning", "NLP", "Computer Vision", "MLOps", "Neural Networks", "Model Optimization"]
+      skills: ["Apache Spark", "Apache Airflow", "ETL Pipelines", "Pandas", "NumPy"]
     },
     {
-      title: "Cloud & DevOps",
-      description: "Implement and manage cloud infrastructure for data and AI workloads with proper CI/CD practices.",
-      Icon: Cloud,
-      skills: ["AWS", "Azure", "GCP", "Docker", "Kubernetes", "CI/CD", "Infrastructure as Code"]
-    },
-    {
-      title: "Data Visualization",
-      description: "Create insightful dashboards and reports to communicate data findings and drive decision-making.",
+      title: "Business Intelligence",
+      description: "Creating powerful dashboards and automated reporting solutions for business insights.",
       Icon: BarChart3,
-      skills: ["Power BI", "Tableau", "Interactive Dashboards", "Data Storytelling", "Business Intelligence"]
+      skills: ["Power BI", "Tableau", "Excel", "Dashboard Automation"]
     },
     {
-      title: "Freelance Consulting",
-      description: "End-to-end consulting services for data science and AI projects with personalized solutions.",
+      title: "Cloud Platforms",
+      description: "Deploying and managing data solutions across major cloud platforms.",
+      Icon: Cloud,
+      skills: ["AWS", "Azure", "Google Cloud Platform (GCP)", "Google Apps Script"]
+    },
+    {
+      title: "Machine Learning & AI",
+      description: "Developing and deploying AI solutions including computer vision and deep learning models.",
       Icon: HeartHandshake,
-      skills: ["Project Management", "Requirements Analysis", "Technical Documentation", "Training & Workshops"]
+      skills: ["TensorFlow", "OpenCV", "Computer Vision", "Deep Learning"]
     }
   ];
 

@@ -21,8 +21,8 @@ export const ContactInfo: React.FC<ContactInfoProps> = ({ contactEmail }) => {
         </div>
 
         <p className="text-gray-600 dark:text-gray-300">
-          I'm currently available for freelance work and full-time positions. 
-          If you have a project that needs data expertise, let's talk about how I can help you.
+          Available for data consulting, AI engineering projects, and dashboard development. 
+          Let's discuss how I can help transform your data into actionable insights and automated solutions.
         </p>
         
         <div className="pt-4">
@@ -39,7 +39,7 @@ export const ContactInfo: React.FC<ContactInfoProps> = ({ contactEmail }) => {
           <p className="font-medium text-gray-800 dark:text-gray-200">Location</p>
           <div className="flex items-center gap-2">
             <MapPin className="text-primary h-4 w-4" />
-            <p className="text-gray-600 dark:text-gray-300">New York, USA</p>
+            <p className="text-gray-600 dark:text-gray-300">Peshawar, Pakistan</p>
           </div>
         </div>
       </div>

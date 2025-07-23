@@ -59,8 +59,10 @@ const About = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">About Me</h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            A passionate Data & AI Engineer with experience in building intelligent data solutions and 
-            implementing machine learning models to solve real-world problems.
+            Skilled Data Analyst and AI Engineer with hands-on experience in building data pipelines, 
+            automating dashboards, and deploying intelligent systems. Proficient in Python, SQL, Power BI, 
+            Airflow, Spark, and cloud platforms like AWS, Azure, and GCP. Passionate about translating 
+            data into actionable insights.
           </p>
         </div>
 
