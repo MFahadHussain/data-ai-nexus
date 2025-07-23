@@ -17,7 +17,7 @@ export const SocialLinks: React.FC = () => {
     },
     {
       name: "GitHub",
-      url: "https://github.com",
+      url: "https://github.com/MFahadHussain",
       icon: Github
     },
     {
