@@ -8,19 +8,19 @@ const Dashboards = () => {
     {
       title: "Sales Analytics Dashboard",
       description: "Real-time sales performance metrics and forecasting",
-      embedUrl: "/dashboards/sales-dashboard.html",
+      embedUrl: "https://drive.google.com/file/d/1ciIYJ_Of0j5mNp8WsQvsEN9gbM0_Fkob/view?usp=sharing",
       externalUrl: "https://drive.google.com/file/d/1ciIYJ_Of0j5mNp8WsQvsEN9gbM0_Fkob/view?usp=sharing"
     },
     {
       title: "Financial Performance Dashboard",
       description: "Comprehensive financial KPIs and trend analysis",
-      embedUrl: "/dashboards/finance-dashboard.html",
-      externalUrl: "https://drive.google.com/file/d/1ciIYJ_Of0j5mNp8WsQvsEN9gbM0_Fkob/view?usp=sharing"
+      embedUrl: "https://drive.google.com/file/d/1zYG63Q13UK5mDwZb7LxNx6c25kdw5EzR/view?usp=sharing",
+      externalUrl: "https://drive.google.com/file/d/1zYG63Q13UK5mDwZb7LxNx6c25kdw5EzR/view?usp=sharing"
     },
     {
       title: "Operations Metrics Dashboard",
       description: "Operational efficiency and performance tracking",
-      embedUrl: "/dashboards/operations-dashboard.html",
+      embedUrl: "https://drive.google.com/file/d/1dSRKFWI0iqVkFjLN03dMhhSlDDnz9eMg/view?usp=sharing",
       externalUrl: "https://drive.google.com/file/d/1dSRKFWI0iqVkFjLN03dMhhSlDDnz9eMg/view?usp=sharing"
     }
   ];
