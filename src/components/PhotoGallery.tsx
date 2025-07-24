@@ -6,52 +6,52 @@ import { X, ZoomIn } from "lucide-react";
 const PhotoGallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-  // Sample photos - in a real implementation, these would be loaded from the Photos folder
+  // Photos from Fahad's journey
   const photos = [
     {
-      src: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      alt: "Coding workspace",
+      src: "/src/assets/1711509964596.jpeg",
+      alt: "Fahad Hussain working",
       caption: "Working on data analysis projects"
     },
     {
-      src: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      alt: "Data visualization",
-      caption: "Creating interactive dashboards"
+      src: "/src/assets/atomcamp.jpeg",
+      alt: "AtomCamp event",
+      caption: "Participating in AtomCamp tech event"
     },
     {
-      src: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      alt: "Laptop setup",
-      caption: "Mobile workstation setup"
+      src: "/src/assets/atomcamp2.jpeg",
+      alt: "AtomCamp presentation",
+      caption: "Presenting at AtomCamp"
     },
     {
-      src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      alt: "Development environment",
-      caption: "Building AI solutions"
+      src: "/src/assets/Fahad.jpeg",
+      alt: "Fahad Hussain",
+      caption: "Professional headshot"
     },
     {
-      src: "https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      alt: "Clean workspace",
-      caption: "Organized development environment"
+      src: "/src/assets/Devfest2023.jpeg",
+      alt: "DevFest 2023",
+      caption: "Speaking at DevFest 2023"
     },
     {
-      src: "https://images.unsplash.com/photo-1473091534298-04dcbce3278c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      alt: "Design tools",
-      caption: "UI/UX design process"
+      src: "/src/assets/GDSC.jpeg",
+      alt: "GDSC activities",
+      caption: "Google Developer Student Club activities"
     },
     {
-      src: "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      alt: "Inspiration",
-      caption: "Finding inspiration in nature"
+      src: "/src/assets/Leverify.jpeg",
+      alt: "Leverify project",
+      caption: "Working on Leverify platform"
     },
     {
-      src: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      alt: "Ocean view",
-      caption: "Peaceful workspace overlooking the ocean"
+      src: "/src/assets/Operation.jpeg",
+      alt: "Operation session",
+      caption: "Technical operation session"
     },
     {
-      src: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      alt: "Night sky",
-      caption: "The vastness of data, like the universe"
+      src: "/src/assets/session.jpeg",
+      alt: "Training session",
+      caption: "Conducting training session"
     }
   ];
 
@@ -97,11 +97,6 @@ const PhotoGallery = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <p className="text-gray-600 dark:text-gray-300">
-            Photos are dynamically loaded from the /Photos folder
-          </p>
-        </div>
 
         {/* Lightbox */}
         {selectedImage && (

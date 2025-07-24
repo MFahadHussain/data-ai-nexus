@@ -26,26 +26,29 @@ export const ContactForm: React.FC<ContactFormProps> = ({ contactEmail }) => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+  const sendToGoogleSheets = async (data: any) => {
+    // Google Apps Script Web App URL - replace with your own
+    const scriptURL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
     
     try {
-      // Using the provided service ID
-      const serviceId = 'service_njekgw5'; 
-      const templateId = 'template_id'; // Replace with your actual template ID
-      const publicKey = 'public_key'; // Replace with your actual public key
-      
-      await emailjs.sendForm(
-        serviceId,
-        templateId,
-        formRef.current!,
-        publicKey
-      );
-      
+      const response = await fetch(scriptURL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams({
+          name: data.name,
+          email: data.email,
+          subject: data.subject,
+          message: data.message,
+          timestamp: new Date().toISOString()
+        })
+      });
+
       toast({
         title: "Message sent!",
-        description: `Your message has been sent to ${contactEmail}. I'll get back to you soon.`,
+        description: "Thank you for your message. I'll get back to you soon.",
       });
       
       setFormData({
@@ -55,15 +58,21 @@ export const ContactForm: React.FC<ContactFormProps> = ({ contactEmail }) => {
         message: "",
       });
     } catch (error) {
-      console.error('Email send failed:', error);
+      console.error('Error sending to Google Sheets:', error);
       toast({
-        title: "Failed to send message",
-        description: "There was an error sending your message. Please try again later.",
+        title: "Error", 
+        description: "Failed to send message. Please try again or contact me directly at bangashfahad98@gmail.com",
         variant: "destructive",
       });
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    sendToGoogleSheets(formData);
   };
 
   return (

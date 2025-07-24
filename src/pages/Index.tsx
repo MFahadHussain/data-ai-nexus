@@ -4,8 +4,10 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import About from "../components/About";
 import Skills from "../components/Skills";
+import Services from "../components/Services";
 import Projects from "../components/Projects";
 import Dashboards from "../components/Dashboards";
+import Packages from "../components/Packages";
 import Resume from "../components/Resume";
 import Certifications from "../components/Certifications";
 import PhotoGallery from "../components/PhotoGallery";
@@ -31,10 +33,16 @@ const Index = () => {
           <Skills />
         </div>
         <div className="fade-in-section">
+          <Services />
+        </div>
+        <div className="fade-in-section">
           <Projects />
         </div>
         <div className="fade-in-section">
           <Dashboards />
+        </div>
+        <div className="fade-in-section">
+          <Packages />
         </div>
         <div className="fade-in-section">
           <Resume />
