@@ -28,7 +28,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ contactEmail }) => {
 
   const sendToGoogleSheets = async (data: any) => {
     // Google Apps Script Web App URL - replace with your own
-    const scriptURL = 'https://script.google.com/macros/s/AKfycby1zjUuXJxTuQGul8bHf0-5eJRYSKK1rv9HPYYMtvGrqMaPxPe0VJZX6v2jr4s8FIv_/exec';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbz329TIwwALSX3zfaNc429lvXkGn2NTTwsZM0AAN7IfZjhfDvldfT6QWteO5SmO5HIV/exec';
     
     try {
       const response = await fetch(scriptURL, {
