@@ -9,19 +9,19 @@ const Dashboards = () => {
       title: "Sales Analytics Dashboard",
       description: "Real-time sales performance metrics and forecasting",
       embedUrl: "/dashboards/sales-dashboard.html",
-      externalUrl: "https://app.powerbi.com/view?r=..."
+      externalUrl: "https://drive.google.com/file/d/1ciIYJ_Of0j5mNp8WsQvsEN9gbM0_Fkob/view?usp=sharing"
     },
     {
       title: "Financial Performance Dashboard",
       description: "Comprehensive financial KPIs and trend analysis",
       embedUrl: "/dashboards/finance-dashboard.html",
-      externalUrl: "https://app.powerbi.com/view?r=..."
+      externalUrl: "https://drive.google.com/file/d/1ciIYJ_Of0j5mNp8WsQvsEN9gbM0_Fkob/view?usp=sharing"
     },
     {
       title: "Operations Metrics Dashboard",
       description: "Operational efficiency and performance tracking",
       embedUrl: "/dashboards/operations-dashboard.html",
-      externalUrl: "https://app.powerbi.com/view?r=..."
+      externalUrl: "https://drive.google.com/file/d/1dSRKFWI0iqVkFjLN03dMhhSlDDnz9eMg/view?usp=sharing"
     }
   ];
 
