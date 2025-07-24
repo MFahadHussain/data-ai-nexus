@@ -59,7 +59,7 @@ const Certifications = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {certifications.map((cert, index) => (
-            <Card key={index} className="relative overflow-hidden border-none shadow-lg hover:shadow-xl transition-all group">
+            <Card key={index} className="relative overflow-hidden card-modern group">
               {/* Award icon decoration */}
               <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
                 <Award className="w-12 h-12 text-primary" />

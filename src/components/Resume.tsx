@@ -80,7 +80,7 @@ const Resume = () => {
                 
                 {/* Content card */}
                 <div className={`ml-12 md:ml-0 w-full md:w-5/12 ${index % 2 === 0 ? 'md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8'}`}>
-                  <Card className="shadow-lg hover:shadow-xl transition-all">
+                  <Card className="card-modern">
                     <CardContent className="p-6">
                       <div className="flex items-start justify-between mb-3">
                         <div>
@@ -109,7 +109,7 @@ const Resume = () => {
         </div>
 
         <div className="text-center mt-16">
-          <Button size="lg" onClick={handleDownloadResume} className="gap-2">
+          <Button size="lg" onClick={handleDownloadResume} className="gap-2 button-modern">
             <FileDown className="w-5 h-5" />
             Download Full Resume
           </Button>

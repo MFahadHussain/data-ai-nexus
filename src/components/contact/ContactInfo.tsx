@@ -9,7 +9,7 @@ interface ContactInfoProps {
 
 export const ContactInfo: React.FC<ContactInfoProps> = ({ contactEmail }) => {
   return (
-    <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md">
+    <div className="bg-white dark:bg-gray-900 card-modern">
       <h3 className="text-xl font-semibold mb-6 flex items-center">
         <Mail className="mr-2 text-primary" /> Contact Information
       </h3>

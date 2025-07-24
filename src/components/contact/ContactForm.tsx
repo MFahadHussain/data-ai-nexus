@@ -67,7 +67,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ contactEmail }) => {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md">
+    <div className="bg-white dark:bg-gray-900 card-modern">
       <h3 className="text-xl font-semibold mb-6">Send Me a Message</h3>
       <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
         <div className="grid grid-cols-2 gap-4">
@@ -112,7 +112,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ contactEmail }) => {
         
         <Button 
           type="submit" 
-          className="w-full bg-primary hover:bg-primary/90"
+          className="w-full bg-primary hover:bg-primary/90 button-modern"
           disabled={isSubmitting}
         >
           {isSubmitting ? (

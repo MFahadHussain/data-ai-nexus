@@ -72,21 +72,27 @@ const About = () => {
           <div>
             <div className="flex items-center mb-6">
               <Briefcase className="w-6 h-6 text-primary mr-2" />
-              <h3 className="text-2xl font-semibold">Work Experience</h3>
+              <h3 className="text-2xl font-semibold">Key Strengths</h3>
             </div>
             <div className="space-y-6">
-              {experience.map((item, index) => (
-                <Card key={index} className="border-l-4 border-l-primary hover:shadow-md transition-shadow">
-                  <CardContent className="p-6">
-                    <h4 className="font-bold text-lg">{item.role}</h4>
-                    <div className="flex justify-between text-sm text-gray-500 dark:text-gray-400 mb-2">
-                      <span>{item.company}</span>
-                      <span>{item.period}</span>
-                    </div>
-                    <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
+              <Card className="border-l-4 border-l-primary hover:shadow-md transition-shadow">
+                <CardContent className="p-6">
+                  <h4 className="font-bold text-lg">Data Engineering</h4>
+                  <p className="text-gray-600 dark:text-gray-300">Building robust ETL pipelines and data infrastructure for scalable solutions.</p>
+                </CardContent>
+              </Card>
+              <Card className="border-l-4 border-l-primary hover:shadow-md transition-shadow">
+                <CardContent className="p-6">
+                  <h4 className="font-bold text-lg">AI Implementation</h4>
+                  <p className="text-gray-600 dark:text-gray-300">Deploying machine learning models and AI systems for real-world applications.</p>
+                </CardContent>
+              </Card>
+              <Card className="border-l-4 border-l-primary hover:shadow-md transition-shadow">
+                <CardContent className="p-6">
+                  <h4 className="font-bold text-lg">Business Intelligence</h4>
+                  <p className="text-gray-600 dark:text-gray-300">Creating interactive dashboards and actionable insights from complex data.</p>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>

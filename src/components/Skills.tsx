@@ -19,8 +19,8 @@ interface ServiceCardProps {
 
 const ServiceCard = ({ title, description, Icon, skills }: ServiceCardProps) => {
   return (
-    <Card className="border-none shadow-lg hover:shadow-xl transition-all group">
-      <CardHeader className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-t-lg pb-2">
+    <Card className="card-modern group h-full">
+      <CardHeader className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-t-card pb-2">
         <div className="bg-primary h-12 w-12 rounded-full flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
           <Icon className="text-white h-6 w-6" />
         </div>

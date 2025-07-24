@@ -20,7 +20,7 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'sans': ['Inter', 'system-ui', 'sans-serif'],
+				'sans': ['Inter', 'Poppins', 'system-ui', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -77,7 +77,10 @@ export default {
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				sm: 'calc(var(--radius) - 4px)',
+				'button': '12px',
+				'card': '16px',
+				'photo': '12px'
 			},
 			keyframes: {
 				'accordion-down': {
@@ -115,13 +118,31 @@ export default {
 						opacity: '1',
 						transform: 'translateX(0)'
 					}
+				},
+				'fade-in-up': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(20px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.5s ease-out',
-				'slide-in': 'slide-in 0.5s ease-out'
+				'slide-in': 'slide-in 0.5s ease-out',
+				'fade-in-up': 'fade-in-up 0.6s ease-out'
+			},
+			scale: {
+				'103': '1.03'
+			},
+			boxShadow: {
+				'card': 'rgba(0, 0, 0, 0.1) 0px 4px 8px',
+				'card-hover': 'rgba(0, 0, 0, 0.15) 0px 8px 16px'
 			}
 		}
 	},

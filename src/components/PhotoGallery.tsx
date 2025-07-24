@@ -64,36 +64,36 @@ const PhotoGallery = () => {
   };
 
   return (
-    <section id="gallery" className="bg-white dark:bg-gray-900 section-padding">
+    <section id="gallery" className="bg-white dark:bg-gray-900 section-padding fade-in-section">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">Photo Gallery</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-gradient">My Work & Journey in Photos</h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             A visual journey through my work environment, projects, and sources of inspiration.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {photos.map((photo, index) => (
-            <Card 
+            <div 
               key={index}
-              className="group overflow-hidden border-none shadow-md hover:shadow-xl transition-all cursor-pointer aspect-square"
+              className="group overflow-hidden rounded-photo cursor-pointer aspect-square shadow-card hover:shadow-card-hover transition-all duration-300"
               onClick={() => openLightbox(photo.src)}
             >
               <div className="relative h-full">
                 <img 
                   src={photo.src}
                   alt={photo.alt}
-                  className="w-full h-full object-cover transition-transform group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-103"
                 />
-                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <ZoomIn className="w-8 h-8 text-white" />
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 transform translate-y-full group-hover:translate-y-0 transition-transform">
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                   <p className="text-white text-sm">{photo.caption}</p>
                 </div>
               </div>
-            </Card>
+            </div>
           ))}
         </div>
 

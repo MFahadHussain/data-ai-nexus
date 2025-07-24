@@ -15,12 +15,12 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ title, description, image, technologies, githubUrl, demoUrl }: ProjectCardProps) => {
   return (
-    <Card className="overflow-hidden border-none shadow-lg hover:shadow-xl transition-all h-full flex flex-col">
+    <Card className="overflow-hidden card-modern h-full flex flex-col">
       <div className="overflow-hidden h-48">
         <img 
           src={image} 
           alt={title} 
-          className="w-full h-full object-cover transition-transform hover:scale-105"
+          className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
         />
       </div>
       <CardHeader>
@@ -40,13 +40,13 @@ const ProjectCard = ({ title, description, image, technologies, githubUrl, demoU
         </div>
       </CardContent>
       <CardFooter className="flex gap-2 justify-end bg-gray-50 dark:bg-gray-800">
-        <Button variant="outline" size="sm" asChild>
+        <Button variant="outline" size="sm" asChild className="button-modern">
           <a href={githubUrl} target="_blank" rel="noopener noreferrer">
             <Github className="mr-1 h-4 w-4" /> Code
           </a>
         </Button>
         {demoUrl && (
-          <Button size="sm" asChild>
+          <Button size="sm" asChild className="button-modern">
             <a href={demoUrl} target="_blank" rel="noopener noreferrer">
               <ExternalLink className="mr-1 h-4 w-4" /> Demo
             </a>
@@ -118,7 +118,7 @@ const Projects = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button size="lg" variant="outline" className="gap-2">
+          <Button size="lg" variant="outline" className="gap-2 button-modern">
             <Code className="w-5 h-5" />
             <a href="https://github.com" target="_blank" rel="noopener noreferrer">
               View All Projects on GitHub
