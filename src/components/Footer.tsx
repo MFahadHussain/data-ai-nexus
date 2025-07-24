@@ -8,17 +8,22 @@ const Footer = () => {
   const socialLinks = [
     {
       name: "GitHub",
-      url: "https://github.com",
+      url: "https://github.com/MFahadHussain",
       icon: Github
     },
     {
       name: "LinkedIn",
-      url: "https://linkedin.com",
+      url: "https://www.linkedin.com/in/fahadbangash/",
       icon: Linkedin
     },
     {
+      name: "Medium",
+      url: "https://medium.com/@bangashfahad98",
+      icon: Medium
+    },
+    {
       name: "Email",
-      url: "mailto:contact@example.com",
+      url: "mailto:bangashfahad98@gmail.com",
       icon: Mail
     }
   ];
@@ -36,7 +41,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
-            <h3 className="text-2xl font-bold mb-4">DataAI<span className="text-primary">Nexus</span></h3>
+            <h3 className="text-2xl font-bold mb-4">The AI Consultant by<span className="text-primary"> Fahad</span></h3>
             <p className="text-gray-300 mb-4 max-w-xs">
               Transforming data into intelligent solutions for businesses and organizations.
             </p>
@@ -86,7 +91,7 @@ const Footer = () => {
         
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            &copy; {currentYear} DataAINexus. All rights reserved.
+            &copy; {currentYear} The AI Consultant by Fahad. All rights reserved.
           </p>
           <div className="flex items-center space-x-2 text-gray-400 text-sm">
             <a href="#" className="hover:text-primary">Privacy Policy</a>
