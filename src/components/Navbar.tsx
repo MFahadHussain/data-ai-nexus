@@ -46,7 +46,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link to="/" className="text-2xl font-bold text-theme-blue">
-          DataAI<span className="text-theme-purple">Nexus</span>
+          Fahad Hussain<span className="text-theme-purple">Data & AI Engineer</span>
         </Link>
 
         {/* Desktop Navigation */}
