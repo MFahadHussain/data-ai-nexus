@@ -88,7 +88,7 @@ const Hero = () => {
             <div className="relative bg-gradient-to-tr from-blue-600 to-purple-600 rounded-full p-1">
               <div className="bg-white dark:bg-gray-900 rounded-full p-2">
                 <img
-                  src="/profile.jpg" 
+                  src="/profile1.jpg" 
                   alt="Professional Data & AI Engineer"
                   className="rounded-full w-64 h-64 object-cover object-top"
                 />
