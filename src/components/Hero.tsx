@@ -90,7 +90,7 @@ const Hero = () => {
                 <img
                   src="/profile.jpg" 
                   alt="Professional Data & AI Engineer"
-                  className="rounded-full w-64 h-64 object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
             </div>
