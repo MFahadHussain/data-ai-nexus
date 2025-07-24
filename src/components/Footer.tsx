@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Github, Linkedin, Mail, Medium, ExternalLink } from "lucide-react";
+import { Github, Linkedin, Mail, ExternalLink } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -19,7 +19,7 @@ const Footer = () => {
     {
       name: "Medium",
       url: "https://medium.com/@bangashfahad98",
-      icon: Medium
+      icon: ExternalLink
     },
     {
       name: "Email",
