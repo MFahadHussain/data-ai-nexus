@@ -9,7 +9,7 @@ const Hero = () => {
     // Create a link to download a sample resume PDF
     // In a real scenario, you would replace this with your actual resume file path
     const link = document.createElement('a');
-    link.href src="/Resume.pdf"; // This assumes you've added a resume.pdf file in the public folder
+    link.href ='/Resume.pdf'; // This assumes you've added a resume.pdf file in the public folder
     link.download = 'data_ai_engineer_resume.pdf';
     document.body.appendChild(link);
     link.click();
