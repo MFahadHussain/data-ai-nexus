@@ -142,7 +142,7 @@ export const ChatbotDialog: React.FC<ChatbotDialogProps> = ({ open, onOpenChange
         };
         
         emailjs.send(
-          "service_qffk7qv", // Your EmailJS service ID
+          "service_njekgw5", // Your EmailJS service ID
           "template_4objhs6", // Replace with your EmailJS template ID
           templateParams
         )
