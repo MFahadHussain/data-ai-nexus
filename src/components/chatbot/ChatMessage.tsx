@@ -1,6 +1,6 @@
-
 import React from "react";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 export interface Message {
   id: string;
@@ -14,9 +14,12 @@ interface ChatMessageProps {
 
 export const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
   const isUser = message.role === "user";
-  
+
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.2 }}
       className={cn(
         "flex w-full mb-4",
         isUser ? "justify-end" : "justify-start"
@@ -32,6 +35,7 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
       >
         {message.content}
       </div>
-    </div>
+    </motion.div>
   );
 };
+
