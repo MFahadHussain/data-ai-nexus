@@ -1,4 +1,4 @@
-
+  
 import React, { useState, useRef, useEffect } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -9,6 +9,10 @@ import { ChatMessage, Message } from "./ChatMessage";
 import { PackageSelector } from "./PackageSelector";
 import { toast } from "sonner";
 import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
+
+const MotionDialogContent = motion(DialogContent);
+
 
 // Initialize EmailJS
 emailjs.init("fcVsbjrz_sxDRW4Qt"); // Replace with your actual EmailJS public key
@@ -303,7 +307,14 @@ export const ChatbotDialog: React.FC<ChatbotDialogProps> = ({ open, onOpenChange
   
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[425px] h-[600px] flex flex-col p-0 gap-0">
+      <MotionDialogContent
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.3 }}
+                className="sm:max-w-[425px] h-[600px] flex flex-col p-0 gap-0"
+                 />
+
         <DialogHeader className="p-4 border-b">
           <DialogTitle>Fahad's AI Assistant</DialogTitle>
         </DialogHeader>
