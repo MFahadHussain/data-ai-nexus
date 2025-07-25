@@ -11,7 +11,7 @@ import { toast } from "sonner";
 import emailjs from "@emailjs/browser";
 
 // Initialize EmailJS
-emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual EmailJS public key
+emailjs.init("fcVsbjrz_sxDRW4Qt"); // Replace with your actual EmailJS public key
 
 interface ChatbotDialogProps {
   open: boolean;
@@ -138,8 +138,8 @@ export const ChatbotDialog: React.FC<ChatbotDialogProps> = ({ open, onOpenChange
         };
         
         emailjs.send(
-          "service_njekgw5", // Your EmailJS service ID
-          "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
+          "service_qffk7qv", // Your EmailJS service ID
+          "template_4objhs6", // Replace with your EmailJS template ID
           templateParams
         )
         .then(() => {
