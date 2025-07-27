@@ -8,8 +8,8 @@ const Dashboards = () => {
     {
       title: "Sales Analytics Dashboard",
       description: "Real-time sales performance metrics and forecasting",
-      embedUrl: "https://drive.google.com/file/d/1ciIYJ_Of0j5mNp8WsQvsEN9gbM0_Fkob/view?usp=sharing",
-      externalUrl: "https://drive.google.com/file/d/1ciIYJ_Of0j5mNp8WsQvsEN9gbM0_Fkob/view?usp=sharing"
+      embedUrl: "https://drive.google.com/file/d/1ciIYJ_Of0j5mNp8WsQvsEN9gbM0_Fkob/preview",
+      externalUrl: "https://drive.google.com/file/d/1ciIYJ_Of0j5mNp8WsQvsEN9gbM0_Fkob/preview"
     },
     {
       title: "Financial Performance Dashboard",
