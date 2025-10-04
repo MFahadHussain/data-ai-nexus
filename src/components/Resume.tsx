@@ -6,44 +6,52 @@ import { FileDown, MapPin, Calendar } from "lucide-react";
 const Resume = () => {
   const experiences = [
     {
+    "title": "AI Engineer",
+    "company": "Zypher",
+    "period": "August 2025 - Present",
+    "description": "Led the design and deployment of computer vision solutions for real-time analytics and automation. Developed and optimized models for projects including Face Recognition with Automated Barriers, Automatic Number Plate Recognition (ANPR), Fire Detection, and Weapon Detection. Applied YOLO, TensorFlow, and PyTorch to build production-ready pipelines, ensuring high accuracy and real-time performance on video streams and edge devices.",
+    "skills": ["Computer Vision", "YOLOv5/v8", "TensorFlow", "PyTorch", "OpenCV", "Deep Learning", "Python", "Model Deployment", "Edge AI"]
+    },
+    {
+      title: "Campus Ambassador",
+      company: "Leverify",
+      period: "2024 - Present",
+      description: "Promoted tech education and career development programs among university students.",
+      skills: ["Community Building", "Event Management", "Marketing"]
+    },
+    {
       title: "AI Intern",
       company: "NCAI",
-      period: "2023 - 2024",
+      period: "June 2025 - August 2025",
       description: "Computer Vision projects using YOLO and TensorFlow for object detection and image classification.",
       skills: ["Computer Vision", "YOLO", "TensorFlow", "Python"]
     },
     {
       title: "Banking Operations Intern",
       company: "Al Baraka Bank",
-      period: "2023",
+      period: "May 2025 - June 2025",
       description: "Analyzed banking operations data and assisted with process automation initiatives.",
       skills: ["Data Analysis", "Process Automation", "Financial Analytics"]
     },
     {
       title: "Technical Lead",
       company: "MLSA Peshawar",
-      period: "2022 - 2024",
+      period: "2024 - 2025",
       description: "Led AI and Cloud Computing initiatives, mentored team members, and organized technical workshops.",
       skills: ["AI", "Cloud Computing", "Leadership", "Mentoring"]
     },
+    
     {
-      title: "Campus Ambassador",
-      company: "Leverify",
-      period: "2022 - 2023",
-      description: "Promoted tech education and career development programs among university students.",
-      skills: ["Community Building", "Event Management", "Marketing"]
-    },
-    {
-      title: "Freelance Data Analyst",
+      title: "Freelancer",
       company: "Fiverr/Upwork",
-      period: "2021 - Present",
+      period: "2023 - Present",
       description: "Delivered data analysis and dashboard creation services to clients across various industries.",
       skills: ["Data Analysis", "Power BI", "Excel", "Client Management"]
     },
     {
       title: "Operations Member",
       company: "GDSC",
-      period: "2021 - 2022",
+      period: "2023 - 2024",
       description: "Supported technical events and workshops focused on Google technologies and developer tools.",
       skills: ["Event Operations", "Google Technologies", "Community Support"]
     }
