@@ -20,7 +20,7 @@ const About = () => {
     {
       degree: "Google Data Analytics Certificate",
       institution: "Google",
-      year: "2023",
+      year: "2024",
       description: "Professional certification in data analytics and visualization."
     }
   ];
@@ -28,7 +28,8 @@ const About = () => {
   
 
   const skills = [
-    "Python", "SQL", "ETL Pipelines", "Power BI", 
+    "Python", "SQL", "ETL Pipelines", "Power BI",
+    "Machine Learning",
     "Apache Spark", "TensorFlow", "AWS", "GCP", 
     "Azure", "Docker", "Git", "Django",
     "NLP", "Computer Vision", "R", "Data Visualization"
