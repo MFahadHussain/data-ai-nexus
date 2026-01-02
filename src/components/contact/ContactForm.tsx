@@ -69,8 +69,47 @@ export const ContactForm: React.FC<ContactFormProps> = ({ contactEmail }) => {
     }
   };
 
+  const validateForm = (): boolean => {
+    if (!formData.name.trim()) {
+      toast({
+        title: "Validation Error",
+        description: "Please enter your name.",
+        variant: "destructive",
+      });
+      return false;
+    }
+    if (!formData.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      toast({
+        title: "Validation Error",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+      return false;
+    }
+    if (!formData.subject.trim()) {
+      toast({
+        title: "Validation Error",
+        description: "Please enter a subject.",
+        variant: "destructive",
+      });
+      return false;
+    }
+    if (!formData.message.trim() || formData.message.trim().length < 10) {
+      toast({
+        title: "Validation Error",
+        description: "Please enter a message with at least 10 characters.",
+        variant: "destructive",
+      });
+      return false;
+    }
+    return true;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!validateForm()) {
+      return;
+    }
     setIsSubmitting(true);
     sendToGoogleSheets(formData);
   };

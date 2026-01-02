@@ -4,12 +4,14 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Send } from "lucide-react";
+import { Send, Sparkles, X } from "lucide-react";
 import { ChatMessage, Message } from "./ChatMessage";
 import { PackageSelector } from "./PackageSelector";
+import { TypingIndicator } from "./TypingIndicator";
+import { QuickActions } from "./QuickActions";
 import { toast } from "sonner";
 import emailjs from "@emailjs/browser";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const MotionDialogContent = motion(DialogContent);
 
@@ -87,6 +89,8 @@ export const ChatbotDialog: React.FC<ChatbotDialogProps> = ({ open, onOpenChange
   const [selectedPackage, setSelectedPackage] = useState("");
   const [askingForEmail, setAskingForEmail] = useState(false);
   const [askingForName, setAskingForName] = useState(false);
+  const [isTyping, setIsTyping] = useState(false);
+  const [showQuickActions, setShowQuickActions] = useState(true);
   
   const endOfMessagesRef = useRef<HTMLDivElement>(null);
   
@@ -95,29 +99,55 @@ export const ChatbotDialog: React.FC<ChatbotDialogProps> = ({ open, onOpenChange
     endOfMessagesRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
   
+  const handleQuickAction = (query: string) => {
+    setShowQuickActions(false);
+    // Create user message from quick action
+    const userMessage: Message = {
+      id: Date.now().toString(),
+      role: "user",
+      content: query
+    };
+    setMessages((prev) => [...prev, userMessage]);
+    setIsTyping(true);
+    
+    // Process the quick action query
+    setTimeout(() => {
+      setIsTyping(false);
+      processUserInput(query.toLowerCase());
+    }, 800 + Math.random() * 400);
+  };
+
   const handleSendMessage = () => {
-    if (!input.trim()) return;
+    const messageText = input.trim();
+    if (!messageText) return;
+    
+    // Hide quick actions after first message
+    if (showQuickActions) {
+      setShowQuickActions(false);
+    }
     
     // Add user message
     const userMessage: Message = {
       id: Date.now().toString(),
       role: "user",
-      content: input
+      content: messageText
     };
     
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
+    setIsTyping(true);
     
     // Handle name collection
     if (askingForName) {
-      setUserName(input.trim());
+      setUserName(messageText.trim());
       setAskingForName(false);
+      setIsTyping(false);
       
       setTimeout(() => {
         const responseMessage: Message = {
           id: Date.now().toString(),
           role: "assistant",
-          content: `Thanks, ${input.trim()}! What's your email address so I can send you information about the ${selectedPackage} package?`
+          content: `Thanks, ${messageText.trim()}! What's your email address so I can send you information about the ${selectedPackage} package?`
         };
         setMessages((prev) => [...prev, responseMessage]);
         setAskingForEmail(true);
@@ -128,22 +158,24 @@ export const ChatbotDialog: React.FC<ChatbotDialogProps> = ({ open, onOpenChange
     // Handle email collection
     if (askingForEmail) {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (emailRegex.test(input.trim())) {
-        setUserEmail(input.trim());
+      setIsTyping(false);
+      
+      if (emailRegex.test(messageText.trim())) {
+        setUserEmail(messageText.trim());
         setAskingForEmail(false);
         
         // Send email using EmailJS
         const templateParams = {
           to_email: contactEmail,
           from_name: userName,
-          from_email: input.trim(),
+          from_email: messageText.trim(),
           selected_package: selectedPackage,
-          message: `${userName} (${input.trim()}) is interested in the ${selectedPackage} package.`
+          message: `${userName} (${messageText.trim()}) is interested in the ${selectedPackage} package.`
         };
         
         emailjs.send(
-          "service_njekgw5", // Your EmailJS service ID
-          "template_4objhs6", // Replace with your EmailJS template ID
+          "service_njekgw5",
+          "template_4objhs6",
           templateParams
         )
         .then(() => {
@@ -151,7 +183,7 @@ export const ChatbotDialog: React.FC<ChatbotDialogProps> = ({ open, onOpenChange
             const responseMessage: Message = {
               id: Date.now().toString(),
               role: "assistant",
-              content: `Thank you! I've sent your interest in the ${selectedPackage} package to our team. Someone will contact you soon at ${input.trim()}.`
+              content: `Thank you! I've sent your interest in the ${selectedPackage} package to our team. Someone will contact you soon at ${messageText.trim()}.`
             };
             setMessages((prev) => [...prev, responseMessage]);
             toast.success("Package inquiry sent successfully!");
@@ -184,8 +216,9 @@ export const ChatbotDialog: React.FC<ChatbotDialogProps> = ({ open, onOpenChange
     
     // Handle regular questions
     setTimeout(() => {
-      processUserInput(input.toLowerCase());
-    }, 500);
+      setIsTyping(false);
+      processUserInput(messageText.toLowerCase());
+    }, 800 + Math.random() * 400); // Simulate typing delay
   };
   
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -225,7 +258,7 @@ export const ChatbotDialog: React.FC<ChatbotDialogProps> = ({ open, onOpenChange
     
     // Contact Information
     if (lowerInput.includes('contact') || lowerInput.includes('reach') || lowerInput.includes('email') || lowerInput.includes('phone')) {
-      responseContent = "You can reach Fahad through:\n\n📧 Email: bangashfahad98@gmail.com\n💼 LinkedIn: https://linkedin.com/in/fahad-bangash\n🐙 GitHub: https://github.com/fahad-bangash\n📝 Medium: https://medium.com/@bangashfahad98\n\nHe's available for freelance and remote work Monday-Friday, 9 AM - 6 PM PST. Feel free to reach out anytime!";
+      responseContent = "You can reach Fahad through:\n\n📧 Email: bangashfahad98@gmail.com\n📞 Phone: 0334-0072900\n💼 LinkedIn: https://www.linkedin.com/in/fahadbangash\n🐙 GitHub: https://github.com/MFahadHussain\n🌐 Portfolio: https://fahadai.netlify.app\n\nHe's available for freelance and remote work. Feel free to reach out anytime!";
     }
     // Education & Background
     else if (lowerInput.includes('education') || lowerInput.includes('background') || lowerInput.includes('degree')) {
@@ -286,7 +319,7 @@ export const ChatbotDialog: React.FC<ChatbotDialogProps> = ({ open, onOpenChange
     }
     // Social Links
     else if (lowerInput.includes('github') || lowerInput.includes('linkedin') || lowerInput.includes('medium') || lowerInput.includes('social') || lowerInput.includes('portfolio')) {
-      responseContent = "Here are Fahad's professional profiles:\n\n🐙 GitHub: https://github.com/fahad-bangash\n💼 LinkedIn: https://linkedin.com/in/fahad-bangash\n📝 Medium: https://medium.com/@bangashfahad98\n🌐 Portfolio: This website showcases his work!\n\nFeel free to connect with him on any platform. He regularly shares insights and updates about his projects!";
+      responseContent = "Here are Fahad's professional profiles:\n\n🐙 GitHub: https://github.com/MFahadHussain\n💼 LinkedIn: https://www.linkedin.com/in/fahadbangash\n🌐 Portfolio: https://fahadai.netlify.app\n📧 Email: bangashfahad98@gmail.com\n📞 Phone: 0334-0072900\n\nFeel free to connect with him on any platform. He regularly shares insights and updates about his projects!";
     }
     // Projects
     else if (lowerInput.includes('project') || lowerInput.includes('portfolio') || lowerInput.includes('work samples')) {
@@ -297,6 +330,7 @@ export const ChatbotDialog: React.FC<ChatbotDialogProps> = ({ open, onOpenChange
       responseContent = "Hi! I'm Fahad Hussain's AI assistant. Fahad is a Data & AI Engineer passionate about helping businesses leverage AI and data for growth. 🚀\n\nI can help you with:\n• Custom chatbot development\n• AI automation solutions\n• Data engineering & pipelines\n• Power BI dashboards\n• Technical consulting\n\nFeel free to ask me about his services, experience, packages, or how you can work together!";
     }
 
+    setIsTyping(false);
     const responseMessage: Message = {
       id: Date.now().toString(),
       role: "assistant",
@@ -308,22 +342,74 @@ export const ChatbotDialog: React.FC<ChatbotDialogProps> = ({ open, onOpenChange
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <MotionDialogContent
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 20 }}
-                transition={{ duration: 0.3 }}
-                className="sm:max-w-[425px] h-[600px] flex flex-col p-0 gap-0"
-                 />
-
-        <DialogHeader className="p-4 border-b">
-          <DialogTitle>Fahad's AI Assistant</DialogTitle>
+        initial={{ opacity: 0, y: 20, scale: 0.95 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        exit={{ opacity: 0, y: 20, scale: 0.95 }}
+        transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+        className="sm:max-w-[440px] h-[640px] sm:h-[680px] flex flex-col p-0 gap-0
+                   bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl
+                   border border-gray-200/50 dark:border-gray-700/50
+                   shadow-2xl rounded-2xl overflow-hidden
+                   fixed bottom-6 right-6 left-auto top-auto translate-x-0 translate-y-0
+                   data-[state=open]:animate-in data-[state=closed]:animate-out
+                   data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0
+                   data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95
+                   data-[state=closed]:slide-out-to-bottom-1/2 data-[state=open]:slide-in-from-bottom-1/2
+                   sm:left-auto sm:top-auto sm:translate-x-0 sm:translate-y-0"
+      >
+        {/* Header with glassmorphism */}
+        <DialogHeader className="px-5 py-4 border-b border-gray-200/50 dark:border-gray-700/50
+                                 bg-gradient-to-r from-blue-50/50 to-purple-50/50 dark:from-gray-800/50 dark:to-gray-800/50
+                                 backdrop-blur-sm">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 
+                              flex items-center justify-center shadow-lg border-2 border-white/20">
+                <Sparkles className="w-5 h-5 text-white" strokeWidth={2.5} />
+              </div>
+              <div>
+                <DialogTitle className="text-lg font-semibold text-gray-800 dark:text-gray-100">
+                  AI Assistant
+                </DialogTitle>
+                <p className="text-xs text-gray-500 dark:text-gray-400 font-medium">
+                  Fahad Hussain
+                </p>
+              </div>
+            </div>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => onOpenChange(false)}
+              className="h-8 w-8 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
+            >
+              <X className="h-4 w-4" />
+            </Button>
+          </div>
         </DialogHeader>
         
-        <ScrollArea className="flex-grow p-4">
-          <div className="flex flex-col">
-            {messages.map((message) => (
-              <ChatMessage key={message.id} message={message} />
-            ))}
+        {/* Messages area */}
+        <ScrollArea className="flex-grow px-4 py-4 bg-gray-50/30 dark:bg-gray-950/30">
+          <div className="flex flex-col min-h-full">
+            <AnimatePresence>
+              {messages.map((message) => (
+                <ChatMessage key={message.id} message={message} />
+              ))}
+            </AnimatePresence>
+            
+            {/* Typing indicator */}
+            <AnimatePresence>
+              {isTyping && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <TypingIndicator />
+                </motion.div>
+              )}
+            </AnimatePresence>
+            
             {showPackages && (
               <PackageSelector packages={servicePackages} onSelectPackage={selectPackage} />
             )}
@@ -331,27 +417,61 @@ export const ChatbotDialog: React.FC<ChatbotDialogProps> = ({ open, onOpenChange
           </div>
         </ScrollArea>
         
-        <div className="p-4 border-t">
-          <div className="flex gap-2">
-            <Input
-              placeholder="Type a message..."
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={handleKeyDown}
-              className="flex-grow"
-            />
+        {/* Quick Actions */}
+        <AnimatePresence>
+          {showQuickActions && messages.length <= 1 && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.2 }}
+              className="px-4 pt-2 pb-3 border-t border-gray-200/50 dark:border-gray-700/50
+                         bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm"
+            >
+              <p className="text-xs font-medium text-gray-500 dark:text-gray-400 mb-2 px-1">
+                Quick actions:
+              </p>
+              <QuickActions onSelect={handleQuickAction} />
+            </motion.div>
+          )}
+        </AnimatePresence>
+        
+        {/* Input area */}
+        <div className="px-4 py-4 border-t border-gray-200/50 dark:border-gray-700/50
+                        bg-white/60 dark:bg-gray-900/60 backdrop-blur-md">
+          <div className="flex gap-2 items-end">
+            <div className="flex-1 relative">
+              <Input
+                placeholder="Type your message..."
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyDown={handleKeyDown}
+                onFocus={() => setShowQuickActions(false)}
+                className="w-full pr-4 pl-4 py-3 rounded-xl
+                           bg-white/80 dark:bg-gray-800/80
+                           border border-gray-200 dark:border-gray-700
+                           focus:border-blue-400 dark:focus:border-blue-500
+                           focus:ring-2 focus:ring-blue-400/20 dark:focus:ring-blue-500/20
+                           text-sm placeholder:text-gray-400 dark:placeholder:text-gray-500
+                           shadow-sm"
+              />
+            </div>
             <Button 
               type="submit" 
               size="icon"
               onClick={handleSendMessage}
-              disabled={!input.trim()}
-              className="shrink-0"
+              disabled={!input.trim() || isTyping}
+              className="h-11 w-11 rounded-xl shrink-0
+                         bg-gradient-to-br from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700
+                         text-white shadow-lg hover:shadow-xl
+                         disabled:opacity-50 disabled:cursor-not-allowed
+                         transition-all duration-200"
             >
-              <Send className="h-4 w-4" />
+              <Send className="h-4 w-4" strokeWidth={2.5} />
             </Button>
           </div>
         </div>
-      </DialogContent>
+      </MotionDialogContent>
     </Dialog>
   );
 };

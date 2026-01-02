@@ -6,44 +6,44 @@ import { Award, ExternalLink } from "lucide-react";
 const Certifications = () => {
   const certifications = [
     {
-      title: "Data Engineer",
-      provider: "DataCamp",
-      date: "2023",
-      description: "Comprehensive data engineering track covering ETL pipelines, data warehousing, and big data technologies.",
-      badgeColor: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300",
-      verifyUrl: "https://datacamp.com/verify"
-    },
-    {
-      title: "AI Fundamentals",
+      title: "Data Science & AI Bootcamp",
       provider: "AtomCamp",
-      date: "2023",
-      description: "Foundational AI concepts including machine learning algorithms, neural networks, and practical applications.",
+      date: "2024",
+      description: "Comprehensive bootcamp covering data science fundamentals, machine learning, AI applications, and hands-on project development.",
       badgeColor: "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300",
-      verifyUrl: "https://atomcamp.com/verify"
+      verifyUrl: "https://atomcamp.com"
     },
     {
-      title: "Power BI Data Analyst",
-      provider: "DataCamp",
-      date: "2023",
-      description: "Advanced Power BI skills including DAX, data modeling, and interactive dashboard creation.",
-      badgeColor: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300",
-      verifyUrl: "https://datacamp.com/verify"
+      title: "Microsoft Lead Student Ambassador",
+      provider: "Microsoft",
+      date: "2024 - 2025",
+      description: "Leading Microsoft technology initiatives, organizing workshops, and mentoring students in AI and cloud computing.",
+      badgeColor: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300",
+      verifyUrl: "https://studentambassadors.microsoft.com"
     },
     {
-      title: "Google Data Analytics",
-      provider: "Coursera",
-      date: "2022",
-      description: "Complete data analytics lifecycle from data collection to visualization and storytelling.",
+      title: "Microsoft Certified Systems Administrator: Machine Learning",
+      provider: "Microsoft",
+      date: "2024",
+      description: "Professional certification in machine learning systems administration and deployment on Microsoft Azure platform.",
+      badgeColor: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300",
+      verifyUrl: "https://learn.microsoft.com"
+    },
+    {
+      title: "Become a Data Analyst",
+      provider: "LinkedIn Learning / Coursera",
+      date: "2024",
+      description: "Complete data analytics program covering data collection, cleaning, analysis, visualization, and storytelling with real-world projects.",
       badgeColor: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300",
-      verifyUrl: "https://coursera.org/verify"
+      verifyUrl: "https://www.linkedin.com/learning"
     },
     {
-      title: "Cloud Computing",
-      provider: "Google Skill Boost",
-      date: "2022",
-      description: "Google Cloud Platform fundamentals including compute, storage, networking, and data services.",
-      badgeColor: "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300",
-      verifyUrl: "https://cloudskillsboost.google/verify"
+      title: "Flutter Workshop",
+      provider: "GDSC / Community",
+      date: "2023",
+      description: "Hands-on workshop on Flutter mobile app development, covering UI/UX design and cross-platform development.",
+      badgeColor: "bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-300",
+      verifyUrl: "#"
     }
   ];
 

@@ -9,6 +9,7 @@ import Projects from "../components/Projects";
 import Dashboards from "../components/Dashboards";
 import Packages from "../components/Packages";
 import Resume from "../components/Resume";
+import Education from "../components/Education";
 import Certifications from "../components/Certifications";
 import PhotoGallery from "../components/PhotoGallery";
 import Contact from "../components/Contact";
@@ -46,6 +47,9 @@ const Index = () => {
         </div>
         <div className="fade-in-section">
           <Resume />
+        </div>
+        <div className="fade-in-section">
+          <Education />
         </div>
         <div className="fade-in-section">
           <Certifications />

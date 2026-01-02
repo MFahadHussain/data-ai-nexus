@@ -46,34 +46,22 @@ const ServiceCard = ({ title, description, Icon, skills }: ServiceCardProps) => 
 const Skills = () => {
   const services = [
     {
-      title: "Programming & Languages",
-      description: "Proficiency in multiple programming languages for data science and AI applications.",
-      Icon: Database,
-      skills: ["Python", "SQL", "JavaScript", "R"]
-    },
-    {
-      title: "Data Engineering & Analytics",
-      description: "Building robust data pipelines and performing advanced analytics on large datasets.",
+      title: "Core Expertise",
+      description: "Specialized skills in AI, Computer Vision, and Data Analysis.",
       Icon: Brain,
-      skills: ["Apache Spark", "Apache Airflow", "ETL Pipelines", "Pandas", "NumPy"]
+      skills: ["Computer Vision", "Deep Learning", "AI & ML", "Data Analysis", "Business Intelligence"]
     },
     {
-      title: "Business Intelligence",
-      description: "Creating powerful dashboards and automated reporting solutions for business insights.",
-      Icon: BarChart3,
-      skills: ["Power BI", "Tableau", "Excel", "Dashboard Automation"]
+      title: "Programming & Tools",
+      description: "Proficiency in programming languages and data tools for AI and BI applications.",
+      Icon: Database,
+      skills: ["Python", "PyTorch", "TensorFlow", "SQL", "Power BI", "Excel"]
     },
     {
-      title: "Cloud Platforms",
-      description: "Deploying and managing data solutions across major cloud platforms.",
+      title: "Model Deployment & APIs",
+      description: "Deploying AI models and building scalable API solutions for production environments.",
       Icon: Cloud,
-      skills: ["AWS", "Azure", "Google Cloud Platform (GCP)", "Google Apps Script"]
-    },
-    {
-      title: "Machine Learning & AI",
-      description: "Developing and deploying AI solutions including computer vision and deep learning models.",
-      Icon: HeartHandshake,
-      skills: ["TensorFlow", "OpenCV", "Computer Vision", "Deep Learning"]
+      skills: ["ONNX", "TensorRT", "Model Deployment", "REST APIs"]
     }
   ];
 

@@ -6,64 +6,116 @@ import { FileDown, MapPin, Calendar } from "lucide-react";
 const Resume = () => {
   const experiences = [
     {
-    "title": "AI Engineer",
-    "company": "Zypher",
-    "period": "August 2025 - Present",
-    "description": "Led the design and deployment of computer vision solutions for real-time analytics and automation. Developed and optimized models for projects including Face Recognition with Automated Barriers, Automatic Number Plate Recognition (ANPR), Fire Detection, and Weapon Detection. Applied YOLO, TensorFlow, and PyTorch to build production-ready pipelines, ensuring high accuracy and real-time performance on video streams and edge devices.",
-    "skills": ["Computer Vision", "YOLOv5/v8", "TensorFlow", "PyTorch", "OpenCV", "Deep Learning", "Python", "Model Deployment", "Edge AI"]
+      title: "AI Vision Engineer",
+      company: "InterCraft Pvt. Ltd.",
+      period: "Nov 2025 – Present",
+      description: "Leading computer vision projects and AI solutions development for enterprise clients.",
+      responsibilities: [
+        "Design and implement computer vision systems for real-time applications",
+        "Develop and optimize deep learning models for production deployment",
+        "Collaborate with cross-functional teams to deliver scalable AI solutions"
+      ],
+      skills: ["Computer Vision", "Deep Learning", "PyTorch", "TensorFlow", "ONNX", "TensorRT", "Model Deployment"]
     },
     {
-      title: "Campus Ambassador",
-      company: "Leverify",
-      period: "2024 - Present",
-      description: "Promoted tech education and career development programs among university students.",
-      skills: ["Community Building", "Event Management", "Marketing"]
+      title: "AI Engineer",
+      company: "Upwork",
+      period: "Jun 2024 – Present",
+      description: "Freelance AI engineering services delivering custom AI solutions to global clients.",
+      responsibilities: [
+        "Develop custom AI models and computer vision applications",
+        "Build REST APIs for model deployment and integration",
+        "Provide end-to-end AI solution consulting and implementation"
+      ],
+      skills: ["AI & ML", "Computer Vision", "Python", "REST APIs", "Model Deployment", "Client Management"]
+    },
+    {
+      title: "AI Engineer",
+      company: "Zypher Enterprise Pvt. Ltd.",
+      period: "Aug 2025 – Oct 2025",
+      description: "Led the design and deployment of computer vision solutions for real-time analytics and automation.",
+      responsibilities: [
+        "Developed Face Recognition with Automated Barriers system",
+        "Built Automatic Number Plate Recognition (ANPR) solutions",
+        "Implemented Fire Detection and Weapon Detection systems using YOLO",
+        "Optimized models for real-time performance on video streams and edge devices"
+      ],
+      skills: ["Computer Vision", "YOLOv5/v8", "TensorFlow", "PyTorch", "OpenCV", "Deep Learning", "Edge AI"]
     },
     {
       title: "AI Intern",
-      company: "NCAI",
-      period: "June 2025 - August 2025",
+      company: "NCAI, UET Peshawar",
+      period: "Jul 2025 – Aug 2025",
       description: "Computer Vision projects using YOLO and TensorFlow for object detection and image classification.",
-      skills: ["Computer Vision", "YOLO", "TensorFlow", "Python"]
+      responsibilities: [
+        "Developed object detection models using YOLO architecture",
+        "Implemented image classification systems with TensorFlow",
+        "Participated in research projects on computer vision applications"
+      ],
+      skills: ["Computer Vision", "YOLO", "TensorFlow", "Python", "Deep Learning"]
     },
     {
-      title: "Banking Operations Intern",
+      title: "Internship Trainee",
       company: "Al Baraka Bank",
-      period: "May 2025 - June 2025",
+      period: "May 2025 – Jun 2025",
       description: "Analyzed banking operations data and assisted with process automation initiatives.",
-      skills: ["Data Analysis", "Process Automation", "Financial Analytics"]
+      responsibilities: [
+        "Performed data analysis on banking operations datasets",
+        "Assisted in developing process automation solutions",
+        "Created reports and dashboards for financial analytics"
+      ],
+      skills: ["Data Analysis", "Process Automation", "Financial Analytics", "Excel", "SQL"]
     },
     {
-      title: "Technical Lead",
-      company: "MLSA Peshawar",
-      period: "2024 - 2025",
-      description: "Led AI and Cloud Computing initiatives, mentored team members, and organized technical workshops.",
-      skills: ["AI", "Cloud Computing", "Leadership", "Mentoring"]
-    },
-    
-    {
-      title: "Freelancer",
-      company: "Fiverr/Upwork",
-      period: "2023 - Present",
-      description: "Delivered data analysis and dashboard creation services to clients across various industries.",
-      skills: ["Data Analysis", "Power BI", "Excel", "Client Management"]
+      title: "Trainee",
+      company: "AtomCamp",
+      period: "Feb 2024 – Nov 2024",
+      description: "Intensive training program in Data Science and AI, covering machine learning, data engineering, and business intelligence.",
+      responsibilities: [
+        "Completed comprehensive Data Science & AI Bootcamp",
+        "Developed multiple projects in ML, data analysis, and BI",
+        "Gained hands-on experience with Python, SQL, Power BI, and AI frameworks"
+      ],
+      skills: ["Data Science", "Machine Learning", "Python", "SQL", "Power BI", "Data Analysis"]
     },
     {
-      title: "Operations Member",
-      company: "GDSC",
-      period: "2023 - 2024",
+      title: "Operations Team Member",
+      company: "GDSC (Google Developer Student Clubs)",
+      period: "2023 – 2024",
       description: "Supported technical events and workshops focused on Google technologies and developer tools.",
-      skills: ["Event Operations", "Google Technologies", "Community Support"]
+      responsibilities: [
+        "Organized technical workshops and community events",
+        "Supported operations for Google technology sessions",
+        "Contributed to community building and knowledge sharing"
+      ],
+      skills: ["Event Operations", "Google Technologies", "Community Support", "Event Management"]
+    },
+    {
+      title: "Early Career Roles",
+      company: "Worldsol Technology Ltd. & Others",
+      period: "2022 – 2023",
+      description: "Initial professional experiences in technology and data-related roles.",
+      responsibilities: [
+        "Gained foundational experience in technology sector",
+        "Developed core skills in data handling and analysis"
+      ],
+      skills: ["Data Analysis", "Technology", "Professional Development"]
     }
   ];
 
   const handleDownloadResume = () => {
-    const link = document.createElement('a');
-    link.href = '/resume/Fahad_Hussain_Resume.pdf';
-    link.download = 'Fahad_Hussain_Data_AI_Engineer_Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    try {
+      const link = document.createElement('a');
+      link.href = '/Resume.pdf';
+      link.download = 'Fahad_Hussain_Data_AI_Engineer_Resume.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error('Error downloading resume:', error);
+      // Fallback: open in new tab
+      window.open('/Resume.pdf', '_blank');
+    }
   };
 
   return (
@@ -101,6 +153,13 @@ const Resume = () => {
                         </div>
                       </div>
                       <p className="text-gray-600 dark:text-gray-300 mb-4">{experience.description}</p>
+                      {experience.responsibilities && (
+                        <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 mb-4 space-y-1">
+                          {experience.responsibilities.map((resp, respIndex) => (
+                            <li key={respIndex} className="text-sm">{resp}</li>
+                          ))}
+                        </ul>
+                      )}
                       <div className="flex flex-wrap gap-2">
                         {experience.skills.map((skill, skillIndex) => (
                           <span key={skillIndex} className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">
@@ -122,7 +181,7 @@ const Resume = () => {
             Download Full Resume
           </Button>
           <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
-            Resume loaded from /Resume folder
+            Download PDF resume
           </p>
         </div>
       </div>
