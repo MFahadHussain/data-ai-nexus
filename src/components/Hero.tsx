@@ -2,6 +2,8 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { FileDown, ExternalLink, Mail, Linkedin, Phone } from "lucide-react";
+import { SplineScene } from "@/components/ui/spline";
+import { Spotlight } from "@/components/ui/spotlight";
 
 const Hero = () => {
   // Function to handle download of resume
@@ -23,9 +25,15 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center bg-gradient-to-br from-white to-blue-50 dark:from-gray-900 dark:to-gray-800 section-padding pt-24"
+      className="min-h-screen flex items-center bg-gradient-to-br from-white to-blue-50 dark:from-gray-900 dark:to-gray-800 section-padding pt-24 relative overflow-hidden"
     >
-      <div className="container mx-auto grid md:grid-cols-2 gap-8 items-center">
+      {/* Spotlight effect background */}
+      <Spotlight
+        className="-top-40 right-0 md:right-40 md:-top-20"
+        fill="rgba(59, 130, 246, 0.1)"
+      />
+
+      <div className="container mx-auto grid md:grid-cols-2 gap-8 items-center relative z-10">
         <div className="flex flex-col space-y-6 animate-fade-in">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
             <span className="text-gray-800 dark:text-gray-200">Fahad Hussain</span>
@@ -91,7 +99,19 @@ const Hero = () => {
           </div>
         </div>
         
-        <div className="hidden md:flex justify-center items-center">
+        {/* Interactive 3D Spline Scene on Desktop */}
+        <div className="hidden md:flex justify-center items-center h-[500px] relative">
+          <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/10 to-purple-600/10 rounded-lg blur-2xl"></div>
+          <div className="relative w-full h-full rounded-lg overflow-hidden border border-primary/20 bg-gradient-to-br from-white/50 to-blue-50/50 dark:from-gray-800/50 dark:to-gray-900/50">
+            <SplineScene 
+              scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+              className="w-full h-full"
+            />
+          </div>
+        </div>
+
+        {/* Fallback profile image on mobile */}
+        <div className="md:hidden flex justify-center items-center">
           <div className="relative">
             <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl"></div>
             <div className="relative bg-gradient-to-tr from-blue-600 to-purple-600 rounded-full p-1">
